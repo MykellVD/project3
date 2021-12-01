@@ -130,37 +130,37 @@ public class GUIRentalStore extends JFrame implements ActionListener {
         if(e.getSource() == exitItem){
             System.exit(1);
         }
-        if(e.getSource() == reserveConsoleItem){
-            Console Console = new Console();
-            RentConsoleDialog dialog = new RentConsoleDialog(this, Console);
-            if(dialog.getCloseStatus() == RentConsoleDialog.OK){
-                DList.add(Console);
-            }
-        }
-        if(e.getSource() == reserveGameItem){
-            Game game = new Game();
-            RentGameDialog dialog = new RentGameDialog(this, game);
-            if(dialog.getCloseStatus() == RentGameDialog.OK){
-                DList.add(game);
-            }
-        }
-
-        if (returnedOutItem == e.getSource()) {
-            int index = jTable.getSelectedRow();
-            if (index != -1) {
-                GregorianCalendar dat = new GregorianCalendar();
-
-                Rental unit = DList.get(index);
-                ReturnedOnDialog dialog = new ReturnedOnDialog(this, unit);
-
-                JOptionPane.showMessageDialog(null,
-                        "  Be sure to thank " + unit.getNameOfRenter() +
-                        "\n for renting with us and the price is:  " +
-                        unit.getCost(unit.getActualDateReturned()) +
-                        " dollars");
-                DList.upDate(index, unit);
-            }
-        }
+//        if(e.getSource() == reserveConsoleItem){
+//            Console Console = new Console();
+//            RentConsoleDialog dialog = new RentConsoleDialog(this, Console);
+//            if(dialog.getCloseStatus() == RentConsoleDialog.OK){
+//                DList.add(Console);
+//            }
+//        }
+//        if(e.getSource() == reserveGameItem){
+//            Game game = new Game();
+//            RentGameDialog dialog = new RentGameDialog(this, game);
+//            if(dialog.getCloseStatus() == RentGameDialog.OK){
+//                DList.add(game);
+//            }
+//        }
+//
+//        if (returnedOutItem == e.getSource()) {
+//            int index = jTable.getSelectedRow();
+//            if (index != -1) {
+//                GregorianCalendar dat = new GregorianCalendar();
+//
+//                Rental unit = DList.get(index);
+//                ReturnedOnDialog dialog = new ReturnedOnDialog(this, unit);
+//
+//                JOptionPane.showMessageDialog(null,
+//                        "  Be sure to thank " + unit.getNameOfRenter() +
+//                        "\n for renting with us and the price is:  " +
+//                        unit.getCost(unit.getActualDateReturned()) +
+//                        " dollars");
+//                DList.upDate(index, unit);
+//            }
+//        }
     }
 
     public static void main(String[] args) {

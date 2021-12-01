@@ -279,6 +279,7 @@ public class ListModel extends AbstractTableModel {
             add(console5);
             add(console3);
             add(console4);
+            listOfRentals.display();
 
             /*
                 These commented out code is to help with debugging for step 2 and Step 3
@@ -309,7 +310,8 @@ public class ListModel extends AbstractTableModel {
             Random rand = new Random(13);
             String guest = null;
 
-            while (count < 0) {
+            //does not run yet
+            while (count < 500) {
                 Date date = df.parse("7/" + (rand.nextInt(10) + 2) + "/2020");
                 GregorianCalendar g = new GregorianCalendar();
                 g.setTime(date);
@@ -344,6 +346,10 @@ public class ListModel extends AbstractTableModel {
         }
     }
 
+    public void display() {
+        listOfRentals.display();
+    }
+
     public ConsoleTypes getOneRandom(Random rand) {
 
         int number = rand.nextInt(ConsoleTypes.values().length - 1);
@@ -359,6 +365,11 @@ public class ListModel extends AbstractTableModel {
             default:
                 return ConsoleTypes.SegaGenesisMini;
         }
+    }
+
+    public static void main(String[] args) {
+        ListModel list = new ListModel();
+        list.createList();
     }
 }
 
